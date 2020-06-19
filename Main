@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int money,i=0;
+    printf("Enter amount : ");
+    scanf("%d",&money);
+
+
+  // IF MONEY IS GREATER THAN 100
+    int hund_rs_note,ten_rs_note;
+    int rem_aft_hun;
+    if (money>=100)
+    {
+
+    hund_rs_note=money/100;
+    printf("\n Hundred rupees notes are : %d",hund_rs_note);
+     rem_aft_hun=money-(hund_rs_note*100);
+//     printf("\n\n  %d",rem_aft_hun);
+     money=rem_aft_hun;
+    }
+
+
+
+
+ // IF MONEY IS GREATER THAN 50 AND SMALLER THAN 100
+  int rem_aft_fif;
+  if (money>=50 && money<100)
+  {
+      printf("\nFifty rupees notes are 1");
+      rem_aft_fif=money-50;
+ //     printf("\n\n %d",rem_aft_fif);
+      money=rem_aft_fif;
+  }
+
+
+
+ // IF MONEY IS GREATER THAN 10 AND SMALLER THAN 50
+ int rem_aft_ten;
+  if (money<50 && money>10)
+  {
+      do {
+          ten_rs_note=10*i;
+          i++;
+      }while(ten_rs_note<money );
+      printf("\nTen rupees notes are : %d",(ten_rs_note/10)-1);
+      rem_aft_ten=money-(ten_rs_note-10);
+ //     printf("\n\n %d",rem_aft_ten);
+      money=rem_aft_ten;
+  }
+
+
+ // IF MONEY IS EQUAL TO 10
+  if (money==10)
+    printf("\nTen rupees notes are : 1");
+
+
+ // IF MONEY IS GREATER THAN 5 AND SMALLER THAN 10
+ int rem_aft_five;
+ if (money<10 && money>=5)
+ {
+    printf("\nFive rupees notes are : 1");
+    rem_aft_five=-(5-money);
+  //  printf("\n\n %d",rem_aft_five);
+    money=rem_aft_five;
+ }
+
+
+
+ // IF MONEY IS GREATER THAN 2 AND SMALLER THAN 5
+  int rem_aft_two;
+if (money<5 && money>=2)
+{
+    if ( money==2) {
+
+        printf("\nTwo Rs. notes : 1\n");
+        rem_aft_two=0;
+       //  printf("\n\n  %d",rem_aft_two); }
+   }
+
+
+    if (money==3) {
+        printf("\nTwo Rs. notes : 1\n");
+        rem_aft_two=1;
+       // printf("\n\n  %d",rem_aft_two); }
+}
+    if (money==4)
+    {
+
+      printf("\nTwo Rs. notes : 2\n");
+      rem_aft_two=0;
+   } //  printf("\n\n  %d",rem_aft_two); }
+      money=rem_aft_two;
+}
+
+
+
+
+// IF MONEY IS EQUAL TO 1
+if (money==1)
+  printf("\nOne rs. : 1\n");
+
+
+
+      return 0;
+}
